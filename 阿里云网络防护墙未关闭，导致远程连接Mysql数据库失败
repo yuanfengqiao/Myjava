@@ -1,2 +1,6 @@
-	之前重启过阿里云的实例，重启之后，我只关闭了firewall，并没有关闭iptables,导致自己在阿里云上的MySql和redis都无法远程连接。
-	一开始我也使用firewall -cmd --state来查看网络防火墙是否开启，linux上显示未开启，我就断定不是网络防火墙的原因了。然后就
+之前重启过阿里云的实例，重启之后，我只关闭了firewall，并没有关闭iptables,导致自己在阿里云上的MySql和redis都无法远程连接。
+一开始我也使用firewall -cmd --state来查看网络防火墙是否开启，linux上显示未开启，我就断定不是网络防火墙的原因了。然后就各种
+排查错误，最后在一篇文章上了解到可能是iptables没有关闭的原因。最后关闭了iptables，错误就解决了。这里主要是自己不明白iptable和
+firewalled的关系。
+        下面我就简单讲一讲自己对firewalled和iptables的理解
+  
